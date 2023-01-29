@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+.myContainer{
+width:40%;
+border:2px solid red;
+margin:auto;
+padding:55px;
+}
+
+</style>
+</head>
+<body>
+
+<form action="form" method="post">
+<div class="container container-fluid myContainer">
+<h3>My Form</h3>
+
+<table>
+ <tr>
+   <td>Enter your name : </td>
+   <td><input type="text" placeholder="enter name" name="user_name"></td>
+   
+  </tr>
+  <tr> 
+   <td>Enter Password :: </td>
+   <td><input type="password" placeholder="enter password" name="user_password"></td>
+   </tr>
+   
+   <tr>
+   <td>Enter Email : </td>
+   <td><input type="email" placeholder="enter email" name="user_email"></td>
+   </tr>
+   
+   <tr>
+    <td>Select Gender : </td>
+    <td> <input type="radio" name="gender" value="male"> Male &nbsp &nbsp <input type="radio" name="gender" value="female"> Female</td>
+  </tr>
+
+  <tr>
+   <td>Select Your course</td>
+   <td><select name="user_course">
+       <option value="Java">Java</option>
+       <option value="net">.Net</option>
+       <option value="python">Python</option>
+      </select>
+  </tr>
+  
+  <tr>
+   <td><input type="checkbox" value="checked" name="condition"></td>
+   <td>Agree Terms and Condition</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td>
+   <button type="submit">Register</button>
+   <button type="reset">Reset</button>
+  </td>
+  
+  </tr>
+
+</table>
+</div>
+
+</form>
+
+</body>
+</html>
