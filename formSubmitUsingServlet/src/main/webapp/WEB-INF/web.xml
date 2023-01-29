@@ -14,4 +14,14 @@
    <url-pattern>/form</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+   <servlet-name>SuccessMsgServlet</servlet-name>
+   <servlet-class>com.formsubmit.SuccessMsgServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>SuccessMsgServlet</servlet-name>
+  <url-pattern>/successMsgServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
