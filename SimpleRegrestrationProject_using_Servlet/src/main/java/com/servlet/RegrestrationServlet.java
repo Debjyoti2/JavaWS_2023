@@ -26,14 +26,10 @@ public class RegrestrationServlet extends HttpServlet{
 		Integer errorCode = dao.registerEmployee(employeeId,employeeName,employeeEmail,employeeAge,employeeMobile,employeeDept);
 		
 		if(errorCode==1000) {
-			PrintWriter out = res.getWriter();
-			res.setContentType("text/html");
-			out.println("<h2> Employee Registered Successfully...  " + employeeName + " (" + employeeId + ")" );
-			out.println("<a href='viewDetailsServlet'>Click here to See Your Details..</a>");
+			Cookie empIdCookie = new Cookie("EMP_ID",String.valueOf(employeeId));
+			res.addCookie(empIdCookie);
 		}
 		
-		Cookie empIdCookie = new Cookie("EMP_ID",String.valueOf(employeeId));
-		res.addCookie(empIdCookie);
 		
 	}
 

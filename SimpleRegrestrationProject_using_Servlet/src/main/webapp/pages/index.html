@@ -5,62 +5,111 @@
 <title>Insert title here</title>
 
 <style>
- .mycontainer{
-    border: 2px solid blue;
-    margin: auto;
-    width: 40%;
-    padding: 20px;
- }
-
+.mycontainer {
+	border: 2px solid blue;
+	margin: auto;
+	width: 40%;
+	padding: 20px;
+}
 </style>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+	integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+	crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+	console.log("page ready");
+	$("#successDiv").hide();
+	
+	
+	 $("#registerForm").on('submit',function(event){
+			
+			event.preventDefault();
+			var data=$(this).serialize();
+			
+			$.ajax({
+				
+				url:"regrestrationServlet",
+				data : data,
+				type:"POST",
+				success: function(data,textStatus,jqXHR){
+					console.log(data);
+					console.log("Success");
+					$("#successDiv").show();
+					
+				},
+			   error:function(jqXHR,textStatus,errorThrown){
+				   console.log(data);
+					console.log("Error");
+			   }
+				
+			});
+			
+		});
+	
+	
+});
+
+
+
+</script>
 </head>
 <body>
 
 
-	<form action="regrestrationServlet" method="post">
+	<form action="regrestrationServlet" method="post" id="registerForm">
 
 		<h2>Please fill below details for Regrestration.....</h2>
+		
 		<div class="container container-fluid mycontainer">
+		  <div id="successDiv" style="color:red;font-weight:bold;margin-bottom:20px;">Employee Registered Successfully... <a href='viewDetailsServlet'>Click here to See Your Details..</a> </div>
 			<table>
 				<tr>
 					<td>Enter Employee Id :</td>
-					<td><input type="number" name="employee_id" placeholder="enter employee id"></td>
+					<td><input type="number" name="employee_id"
+						placeholder="enter employee id"></td>
 				</tr>
-				
+
 				<tr>
-				 <td>Enter Employee Name :</td>
-				 <td><input type="text" name="employee_name" placeholder="Enter employee name"></td>
+					<td>Enter Employee Name :</td>
+					<td><input type="text" name="employee_name"
+						placeholder="Enter employee name"></td>
 				</tr>
-				
+
 				<tr>
-				<td>Enter Employee Email :</td>
-				<td><input type="email" name="employee_email" placeholder="enter email"></td>
+					<td>Enter Employee Email :</td>
+					<td><input type="email" name="employee_email"
+						placeholder="enter email"></td>
 				</tr>
-				
+
 				<tr>
-				 <td>Enter Employee Age : </td>
-				 <td><input type="number" name="employee_age" placeholder="enter email"></td>
+					<td>Enter Employee Age :</td>
+					<td><input type="number" name="employee_age"
+						placeholder="enter email"></td>
 				</tr>
-				
+
 				<tr>
-				 <td>Enter Mobile No: </td>
-				 <td><input type="number" name="employee_mobile" placeholder="enter mobile no"></td>
+					<td>Enter Mobile No:</td>
+					<td><input type="number" name="employee_mobile"
+						placeholder="enter mobile no"></td>
 				</tr>
-				
+
 				<tr>
-				 <td>Enter Dept:</td>
-				 <td><select name="employee_dept">
-				  <option value="IT">IT</option>
-				  <option value="ITIS">ITIS</option>
-				  <option value="EIS">EIS</option>
-				 </select></td>
+					<td>Enter Dept:</td>
+					<td><select name="employee_dept">
+							<option value="IT">IT</option>
+							<option value="ITIS">ITIS</option>
+							<option value="EIS">EIS</option>
+					</select></td>
 				</tr>
 
 			</table>
-			
+
 			<div>
-			 <button type="submit">Register</button>
-			 <button type="reset">Reset</button>
+				<button type="submit">Register</button>
+				<button type="reset">Reset</button>
 			</div>
 		</div>
 	</form>
