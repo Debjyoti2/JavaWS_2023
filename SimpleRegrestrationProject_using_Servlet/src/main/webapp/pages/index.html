@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+ .mycontainer{
+    border: 2px solid blue;
+    margin: auto;
+    width: 40%;
+    padding: 20px;
+ }
+
+</style>
+</head>
+<body>
+
+
+	<form action="regrestrationServlet" method="post">
+
+		<h2>Please fill below details for Regrestration.....</h2>
+		<div class="container container-fluid mycontainer">
+			<table>
+				<tr>
+					<td>Enter Employee Id :</td>
+					<td><input type="number" name="employee_id" placeholder="enter employee id"></td>
+				</tr>
+				
+				<tr>
+				 <td>Enter Employee Name :</td>
+				 <td><input type="text" name="employee_name" placeholder="Enter employee name"></td>
+				</tr>
+				
+				<tr>
+				<td>Enter Employee Email :</td>
+				<td><input type="email" name="employee_email" placeholder="enter email"></td>
+				</tr>
+				
+				<tr>
+				 <td>Enter Employee Age : </td>
+				 <td><input type="number" name="employee_age" placeholder="enter email"></td>
+				</tr>
+				
+				<tr>
+				 <td>Enter Mobile No: </td>
+				 <td><input type="number" name="employee_mobile" placeholder="enter mobile no"></td>
+				</tr>
+				
+				<tr>
+				 <td>Enter Dept:</td>
+				 <td><select name="employee_dept">
+				  <option value="IT">IT</option>
+				  <option value="ITIS">ITIS</option>
+				  <option value="EIS">EIS</option>
+				 </select></td>
+				</tr>
+
+			</table>
+			
+			<div>
+			 <button type="submit">Register</button>
+			 <button type="reset">Reset</button>
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>
