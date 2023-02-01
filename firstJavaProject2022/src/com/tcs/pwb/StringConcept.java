@@ -4,6 +4,8 @@ public class StringConcept {
 
 	public static void main(String[] args) {
 		//string is a immutable object
+		//string  is immutable object but StringBuffer,StringBuilder are mutable object
+		
 		String a="abc";
 		String b=a.concat("def");
 		System.out.println("String a is : " +a);
