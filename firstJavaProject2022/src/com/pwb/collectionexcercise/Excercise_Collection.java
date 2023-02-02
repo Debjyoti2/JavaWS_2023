@@ -49,6 +49,10 @@ public class Excercise_Collection {
 			System.out.println("Elements are :  " +  s + " values : " + _map1.get(s) );
 		}
 		
+		for(Map.Entry<String,Integer> map : _map1.entrySet()) {
+			System.out.println(map.getKey() + map.getValue());
+		}
+		
 		
 		//Q17 Write a program to sort HashMap by keys ?
 		Map<String,Integer> _map2 = new TreeMap<String,Integer>();

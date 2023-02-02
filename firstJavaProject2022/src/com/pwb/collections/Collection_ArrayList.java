@@ -71,7 +71,14 @@ public class Collection_ArrayList {
 		//then for loop/for each loop use kora jbe na..--concurrent modification error dbe
 		//always use Iterator while doing any concurrent modification in a arraylist
 		ArrayList<String> magazineList = new ArrayList<String>();
-		for(Iterator<String> itr = magazineList.iterator();itr.hasNext();) {
+//		for(Iterator<String> itr = magazineList.iterator();itr.hasNext();) {
+//			if(itr.next().toString().equalsIgnoreCase("A")) {
+//				itr.remove();
+//			}
+//		}
+		
+		Iterator<String> itr = magazineList.iterator();
+		while(itr.hasNext()) {
 			if(itr.next().toString().equalsIgnoreCase("A")) {
 				itr.remove();
 			}
