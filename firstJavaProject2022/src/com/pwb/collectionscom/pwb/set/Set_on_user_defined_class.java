@@ -14,6 +14,8 @@ public class Set_on_user_defined_class {
 		empSet.add(new EmployeePojoForSet(4,"Kiran4"));
 		
 		System.out.println(empSet);
+		
+		
 	}
 
 }
