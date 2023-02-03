@@ -1,4 +1,4 @@
-package com.pwb.polymorphism.compileTimePolymorphism;
+package com.pwb.polymorphism.runTimePolymorphism;
 
 public class Runner {
 
