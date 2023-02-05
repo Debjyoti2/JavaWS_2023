@@ -7,7 +7,7 @@ public class BlockingQueue_Runner {
 	
 	public static void main(String[] args) {
 		
-		BlockingQueue<String> block = new ArrayBlockingQueue<>(5);
+		BlockingQueue<String> block = new ArrayBlockingQueue<>(1);
 		
 		Producer p1 = new Producer(block);
 		Consumer c1 = new Consumer(block);

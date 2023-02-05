@@ -2,7 +2,26 @@ package com.singleton_class;
 
 public class Employee_Singleton {
 	
+	private String companyName="TCS";
+	private String deptName="ITIS";
 	
+	
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
 	private Employee_Singleton() {
 		
 	};
