@@ -26,4 +26,13 @@
    <url-pattern>/viewDetailsServlet</url-pattern>
   </servlet-mapping>
   
+  <filter>
+   <filter-name>EmpAuthFilter</filter-name>
+  <filter-class>com.filter.EmployeeAuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+   <filter-name>EmpAuthFilter</filter-name>
+   <url-pattern>/regrestrationServlet</url-pattern>
+  </filter-mapping>
+  
 </web-app>
