@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>JSTL_Tags</display-name>
+  <welcome-file-list>
+    <welcome-file>pages/index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+   <servlet-name>test</servlet-name>
+   <jsp-file>/pages/test.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+   <servlet-name>test</servlet-name>
+   <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
