@@ -1,5 +1,12 @@
 package com.pwb.map;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Notes {
 	
 	
@@ -54,5 +61,25 @@ public class Notes {
 	
 	//Map(TreeMap)
 	//Map<Object,String> newMap = new TreeMap<Object,String>();
+	
+	
+	public static void main(String[] args) {
+		Map<String,Integer> map1 =  new HashMap<>();
+		map1.put("A",10);
+		
+		Map<String,Integer> map2 = new LinkedHashMap<>();
+		map2.put("B",11);
+		
+		Map<String,Integer> map3 = new TreeMap<>();
+		map3.put("C",12);
+		
+		Map<String,Integer> map4 = new Hashtable<>();
+		map4.put("D", 13);
+		
+		Map<String,Integer> map5 =new ConcurrentHashMap<>();
+		map5.put("E",14);
+	}
+	
+	
 
 }

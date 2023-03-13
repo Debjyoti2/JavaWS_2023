@@ -6,7 +6,7 @@ public class WrapperClasses {
 
 	public static void main(String[] args) {
 
-    //why to user wrapper classes
+    //why to use wrapper classes
 	//String is not a wrapper class. String is a class provided by java
 	//all the wrapper classes just like String is immutable.
 	int a; Integer a1;

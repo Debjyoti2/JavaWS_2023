@@ -5,10 +5,10 @@ public interface Bicycle {
 	//we can also declare a properties variable
 	final int a =45;
 	
-	public void speedUp();
-	public void applyBreak();
+	 void speedUp();
+	 void applyBreak();
 	
-
+    //interface er method gulo by default public and abstract hoy.
 }
 
 //an abstract class can have both abstract method and concrete method

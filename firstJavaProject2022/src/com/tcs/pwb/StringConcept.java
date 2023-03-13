@@ -38,7 +38,7 @@ public class StringConcept {
 		
 		System.out.println("\nString substr function");
 		String d="I am a good boy";
-		String e =d.substring(0,4);//print i am
+		String e =d.substring(0,4);//print i am (inclusive,exclusive)
 		System.out.println("String e is : " + e);
 		
 		System.out.println("\nString replace function");
