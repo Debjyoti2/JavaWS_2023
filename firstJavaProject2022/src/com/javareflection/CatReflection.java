@@ -13,12 +13,11 @@ public class CatReflection {
 	
 	 //Type2.
 	 //Cat obj = new Cat();
-	 //Class mycat = obj.getClass();
+	 //Class mycat = obj.getClass(); 
 	 
 	 //Type3.
 	 //Class mycat = Class.forName("com.javareflection.Cat");
      
-	 mycat.getConstructors();
 	 
      String className = mycat.getClass().toString();
      String className2 = mycat.getName();

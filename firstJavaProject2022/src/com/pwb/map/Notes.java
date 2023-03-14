@@ -78,6 +78,12 @@ public class Notes {
 		
 		Map<String,Integer> map5 =new ConcurrentHashMap<>();
 		map5.put("E",14);
+		
+		
+		for(Map.Entry<String, Integer> mp : map1.entrySet()) {
+			mp.getValue();
+			mp.getKey();
+		}
 	}
 	
 	

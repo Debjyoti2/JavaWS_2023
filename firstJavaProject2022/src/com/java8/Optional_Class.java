@@ -19,6 +19,10 @@ public class Optional_Class {
 		String value3 = strList.stream().filter(e->e.equalsIgnoreCase("CD")).findAny().get();
 		System.out.println(value3); //CD
 		
+		//findAny() , findFirst() ei 2 to method e value aste o pare nao aste pare.
+		//so java Optional<Obj> return kore. eta null o hote pare..jate exception na khay.
+		//.get() korle value ta petye jbe.
+		
 
 	}
 
