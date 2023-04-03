@@ -29,9 +29,16 @@ public class Notes_Differrence_Of_ArrayList_LinkedList {
 	//but jodi besi majkhan theke dhokate ber korte hoy...then use linked list
 	
 	
-	ArrayList<String> arraylist = new ArrayList<String>();
 	
-	LinkedList<String> linkedlist = new LinkedList<String>();
+	
+	
+	public static void main(String[] args) {
+		ArrayList<String> arraylist = new ArrayList<String>();
+		
+		LinkedList<String> linkedlist = new LinkedList<String>();
+		
+		
+	}
 	
 
 }

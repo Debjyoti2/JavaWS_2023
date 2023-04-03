@@ -16,7 +16,7 @@ public class Thread_Lifecycle_Notes{
 	
 	//5. Terminated -- kono thread er code kokhn complete execute hoye jay
 	
-	
+	 
 	
 	
 }

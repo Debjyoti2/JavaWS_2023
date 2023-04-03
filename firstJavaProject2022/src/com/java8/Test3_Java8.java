@@ -20,9 +20,12 @@ public class Test3_Java8 {
 		empList.add(new Employee_3(106, "alice", 103, "inactive",3500));
 		empList.add(new Employee_3(107, "srinu", 104, "active",3500));
 		
-		//group by 
+		//group by salary
 		Map<Integer,List<Employee_3>> empMap = new HashMap<>();
 		empMap=empList.stream().collect(Collectors.groupingBy(Employee_3 :: getSalary,Collectors.toList()));
+		
+		Map<Integer,Long> mpp = empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.counting()));
+		
 		
 		//group by count
 		Map<Integer,Long> map_groupby_deptid = new HashMap<>(); 
@@ -45,6 +48,8 @@ public class Test3_Java8 {
 		Employee_3 maxSalObj = empList.stream().max((e1,e2)-> Integer.compare(e1.getSalary(),e2.getSalary())).get();
 		System.out.println("maxSalObj is :: " + maxSalObj);
 		
+		
+		
 		//max sal emp from each dept
 		Map<Integer,List<Employee_3>> grpbydept = empList.stream().collect(Collectors.groupingBy(Employee_3 :: getDeptId,Collectors.toList()));
 		
@@ -53,8 +58,21 @@ public class Test3_Java8 {
 		List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
 		Integer value = myList.stream().max((e1,e2)->e1.compareTo(e2)).get();
 		System.out.println("max value is : " + value);
-		
 
+		
+		//Intermediate operations?  
+		 //Filter(Predicate FI)
+		 //map
+		 //distinct()
+		 //flatMap
+		
+		
+		// Terminal operations?
+		  //reduce(Consumer FI)
+		  //collect()
+		
+		
+		
 	}
 
 }

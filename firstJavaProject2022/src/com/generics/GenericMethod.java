@@ -6,7 +6,7 @@ import java.util.List;
 public class GenericMethod {
 	
 	
-	public static <T extends Object> List<T> duplicateList(List<T> list){
+	public static <T> List<T> duplicateList(List<T> list){
 		list.addAll(list);
 		return list;
 	}
