@@ -5,6 +5,13 @@ public class StringQstn {
 	//== operator checks the memory address
 	//.equals() method check the content inside the string
 	
+	/*
+	
+	String is immutable bcs of the security reasons. as its immutable its cant be changed once assigned.
+	so we can use db username, password in string . that cant be modified by the hacker once created.
+	
+	*/
+	
 	public static void main(String[] args) {
 		
 		 String str1  = "Apple";  

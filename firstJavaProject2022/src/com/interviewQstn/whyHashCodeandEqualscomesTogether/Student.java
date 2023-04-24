@@ -1,5 +1,7 @@
 package com.interviewQstn.whyHashCodeandEqualscomesTogether;
 
+import java.util.Objects;
+
 public class Student {
 	
 	private int id;
@@ -9,26 +11,30 @@ public class Student {
 		this.id=id;
 		this.name=name;
 	}
-	
+
+
 	@Override
-	public boolean equals(Object o) {
-		Student o1 =(Student) o;
-		if(this.id==o1.id) {
+	public boolean equals(Object obj) {
+		
+		Student that =(Student) obj;
+		if(this.id==that.id) {
 			return true;
 		}
 		return false;
-			
+		
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return this.id;
 	}
+	
 
-	/*
-	 * @Override public String toString() { return "Student [id=" + id + ", name=" +
-	 * name + "]"; }
-	 */
+	
+	
+	
+
+
 	
 	
 

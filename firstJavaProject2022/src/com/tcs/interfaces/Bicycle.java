@@ -7,7 +7,16 @@ public interface Bicycle {
 	
 	 void speedUp();
 	 void applyBreak();
+	 
+	 default void withbody() {
+		 System.out.println("java 1.8 new default method for backward compatibilty");
+		 withbody2();
+	 }
 	
+	 static void withbody2() {
+		 System.out.println("static method given for utilty functionalities");
+	 }
+	 
     //interface er method gulo by default public and abstract hoy.
 }
 
