@@ -15,4 +15,40 @@ public class HashSet_internal_working {
 		mySet.add("EFG");
 	}
 	
+	
+	/*
+	 *
+	 
+	 HashSet intrenally uses HashMap only
+	 
+	  private static final Object PRESENT = new Object();
+	 
+	 set.add("A");   it executes internally  map.put("A", PRESENT);
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 */
+	
+	
 }

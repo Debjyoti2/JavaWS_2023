@@ -58,7 +58,7 @@ public class Test1 {
     	System.out.println("sumOfNumbersInaList :: " + sum);
     }
     
-    //sum of only numbers from list3
+    //sum of only even numbers from list3
     public static void FilterOddNumberAndAdd(List<Integer> list3) {
     	int sum= list3.stream().filter(e->e%2!=0).reduce(0,(num1,num2)->num1+num2); 
     	System.out.println("FilterOddNumberAndAdd   "  + sum);
@@ -113,6 +113,9 @@ public class Test1 {
 		List<Integer> list3 = List.of(1,2,3,4,5,6,7,8,9,12,32,33,54,2,32,67,89);
 		Integer value = list3.stream().max((n1,n2)-> Integer.compare(n1,n2)).get();
 		System.out.println("Value is :: " + value);
+		
+		list3.stream().max((e1,e2)->Integer.compare(e1,e2)).get();
+		list3.stream().max((e1,e2)->Integer.compare(e1,e2)).get();
 		
 		
 		 

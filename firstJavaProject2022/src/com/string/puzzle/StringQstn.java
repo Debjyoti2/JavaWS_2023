@@ -16,6 +16,14 @@ public class StringQstn {
 		
 		 String str1  = "Apple";  
 		 String  str2 = "Apple";
+		 
+		 str1.concat("adddd"); //new literal created  in string constant pool  Appleadddd;
+		 
+		 //but still the value of str1 is Apple as str1 points to original literal Apple in SCP.
+		 
+		 //now once concat the value and also change the pointing  
+		 str1 = str1.concat("cc");
+		 //now str1 will have value Applecc;
 		
 		 //1. == operator checks the memory address
 		 //same content er jonno string constant pool e ektai object create hoy,str1,str2 both same object kei point kore.

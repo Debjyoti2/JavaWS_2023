@@ -21,7 +21,7 @@ public class Find_duplicate_element_in_a_integer_list {
 		//by pure java 8
 		Set<Integer> duplicateElement = new HashSet<>();	
 		intList.stream().filter(e->!duplicateElement.add(e)).collect(Collectors.toSet()).forEach(e->System.out.println(e));
-		
+		intList.stream().filter(e->!duplicateElement.add(e)).collect(Collectors.toSet()).forEach(e->System.out.println(e));
 
 	}
 

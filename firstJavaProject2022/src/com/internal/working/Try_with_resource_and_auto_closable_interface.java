@@ -20,9 +20,32 @@ public class Try_with_resource_and_auto_closable_interface {
 			e.printStackTrace();
 		}
 		
+		
+		
+		
+		
+		
+		
+		
+		try{
+			
+		}
+		catch(Exception e) {
+			
+		}
+		finally {
+			
+		}
+		
+		
+		
 	}
 	
+	
 }
+
+
+
 
 /*
 writing filereader inside 1st bracket of try block .. its called try with resources.. this resources does

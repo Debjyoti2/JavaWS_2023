@@ -7,6 +7,7 @@ public class Java_BinarySearch {
 	
 	public static void main(String[] args) {
 		
+		
 		ArrayList<Employee> newEmpList = new ArrayList<Employee>();
 		Employee e1 = new Employee(1, "A");
 		Employee e2 = new Employee(4, "B");

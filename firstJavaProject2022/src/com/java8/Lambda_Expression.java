@@ -8,9 +8,9 @@ public class Lambda_Expression {
 	}
 	
 	
-	//now remove public, int , sum i.e (access modifier, return type, name) and then write , it became a lambda function
+	//now remove public, int , return sum i.e (access modifier, return type, name) and then write , it became a lambda function
 	
-	//(a, b)-> return a+b;
+	//(a, b)-> a+b;
 	
 	
 	//example 2

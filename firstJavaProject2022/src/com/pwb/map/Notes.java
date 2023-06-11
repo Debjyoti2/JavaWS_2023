@@ -63,6 +63,12 @@ public class Notes {
 	//Map<Object,String> newMap = new TreeMap<Object,String>();
 	
 	
+   //5. ConcurrentHashMap
+	
+   //6.  WeakHashMap
+	
+   //7. IdentityHashMap 
+	
 	public static void main(String[] args) {
 		Map<String,Integer> map1 =  new HashMap<>();
 		map1.put("A",10);

@@ -1,4 +1,4 @@
-package com.pwb.collections;
+package com.internal.working;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
