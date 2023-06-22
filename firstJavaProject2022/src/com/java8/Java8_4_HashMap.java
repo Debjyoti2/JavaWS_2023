@@ -19,7 +19,7 @@ public class Java8_4_HashMap {
 		//filter where age >30
 		Map<String,Integer> filterMap = empMap.entrySet().stream().filter(e->e.getValue()>30).collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
 		System.out.println(filterMap);
-		
+		empMap.entrySet().stream().filter(e->e.getValue()>30).collect(Collectors.toMap(e->e.getKey(),e->e.getValue()));
 		
 		
 		

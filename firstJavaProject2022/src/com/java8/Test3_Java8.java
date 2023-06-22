@@ -31,6 +31,8 @@ public class Test3_Java8 {
 		
 		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
 		
+		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
+		
 		//group by salary
 		Map<Integer,List<Employee_3>> empMap = new HashMap<>();
 		empMap=empList.stream().collect(Collectors.groupingBy(Employee_3 :: getSalary,Collectors.toList()));
@@ -63,6 +65,12 @@ public class Test3_Java8 {
 		Integer maxsal  = empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary()).get();
 		
 		Integer maxsal3 = empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary()).get();
+		
+		
+		empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary());
+		empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).get();
+		
+		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
 		
 		//max sal emp from each dept
 		Map<Integer,List<Employee_3>> grpbydept = empList.stream().collect(Collectors.groupingBy(Employee_3 :: getDeptId,Collectors.toList()));
@@ -106,6 +114,7 @@ public class Test3_Java8 {
 		List<Employee_3> sortedempList= empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary).reversed()).collect(Collectors.toList());
 		System.out.println("sortedempList :: " + sortedempList);
 		
+		//short circuit operation
 		List<Employee_3> st3sortedempList= sortedempList.stream().limit(3).collect(Collectors.toList());
 		System.out.println("st3sortedempList :: " + st3sortedempList);
 		
@@ -116,6 +125,10 @@ public class Test3_Java8 {
 		List<Integer> intList2 = List.of(intarray);
 		Integer sum = intList2.stream().reduce(0,(e1,e2)->(e1+e2));
 		System.out.println("sum :: " + sum);
+		
+		intList2.stream().reduce(0,(e1,e2)->(e1+e2));
+		
+		empList.stream().map(e->e.getSalary()).reduce(0,(e1,e2)->(e1+e2));
 		
 		
 	}
