@@ -1,15 +1,17 @@
 package com.java8;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Test3_Java8 {
 
@@ -32,6 +34,12 @@ public class Test3_Java8 {
 		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
 		
 		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
+		
+		
+		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
+		
+		//2nd highest
+		empList.stream().sorted(Comparator.comparingInt(Employee_3 :: getSalary)).skip(1).findFirst();
 		
 		//group by salary
 		Map<Integer,List<Employee_3>> empMap = new HashMap<>();
@@ -129,6 +137,67 @@ public class Test3_Java8 {
 		intList2.stream().reduce(0,(e1,e2)->(e1+e2));
 		
 		empList.stream().map(e->e.getSalary()).reduce(0,(e1,e2)->(e1+e2));
+		
+		
+		//find duplicate by java 8
+		Integer[] intarray2 = {1,2,3,4,1,2};
+		List<Integer> intList = List.of(intarray2);
+		
+		Set<Integer> set = new HashSet<Integer>();
+		
+		Set<Integer> duplicate = intList.stream().filter(e->!set.add(e)).collect(Collectors.toSet());
+		System.out.println("duplicate :: " + duplicate);
+		
+		
+		
+		//7. Given a String, find the first non-repeated character in it using Stream functions?
+		String input = "Java articles are Awesome";
+		
+		String firstnonchar = Stream.of(input.split("")).filter(e->!" ".equals(e)).map(e->e.toLowerCase()).
+				              collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new, Collectors.counting()))
+				              .entrySet().stream().filter(e->e.getValue()<2).findFirst().map(e->e.getKey()).get();
+		System.out.println(firstnonchar);
+		
+		
+		//8. Given a String, find the first repeated character in it using Stream functions?
+		
+		String input2 = "Java Articles are Awesome";
+		String firstrepchar = Stream.of(input2.split("")).filter(e->!" ".equals(e)).collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new ,Collectors.counting()))
+				.entrySet().stream().filter(e->e.getValue()>1).findFirst().map(e->e.getKey()).get();
+		System.out.println(firstrepchar);
+		
+		
+		
+		//11. Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+		
+		Integer[]nums = {1,2,3,4};
+		Long count = Stream.of(nums).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+				.entrySet().stream().filter(e->e.getValue()>1).count();
+		if(count>0) {
+			System.out.println("Atleast 1 duplicate");
+		}else {
+			System.out.println("All distinct ");
+		}
+		
+		
+		//remove white space from string by java 8
+		String str1 = "My Name is Debjyoti";
+		String[] strarray1 = str1.split("");
+		List<String> strList1 = List.of(strarray1);
+		System.out.println(strList1);
+		StringBuilder sb = new StringBuilder();
+		strList1.stream().filter(e->!" ".equals(e)).forEach(e-> sb.append(e));
+		System.out.println("String is ::   " + sb.toString());
+		
+		
+		
+		List<String> strList4 =  List.of("Apple","Banana","Mango");
+		Map<Object,Object> mppp = strList4.stream().collect(Collectors.toMap(e->String.valueOf(e), e->strList4.indexOf(e)));
+		System.out.println(mppp);
+		
+		
+		
+		
 		
 		
 	}

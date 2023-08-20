@@ -1,6 +1,7 @@
 package com.WAP;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Test2 {
@@ -18,6 +19,20 @@ public class Test2 {
 		arrList.add(3);
 		arrList.add(4);
 		arrList.add(5);
+		
+		int a[] = {2,4,6};
+	    int b[] = {3,5,7};
+	     
+	    int l = a.length+b.length;
+		int[] all = new int[l];
+		
+	    for(int i=0;i<a.length;i++) {
+	    	all[i] = a[i];
+	    }
+	    for(int i=0;i<b.length;i++) {
+	    	all[a.length+i] = b[i];
+	    }
+	    System.out.println(Arrays.toString(all));
 		
 	    
 	}

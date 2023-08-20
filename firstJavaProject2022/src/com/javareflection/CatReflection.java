@@ -27,8 +27,8 @@ public class CatReflection {
      
      
      
-     Field catFileds[] = mycat.getDeclaredFields();
-     Method catMethods[] =mycat.getDeclaredMethods();
+     Field[] catFileds = mycat.getDeclaredFields();
+     Method[] catMethods =mycat.getDeclaredMethods();
      
      for(Field f : catFileds) {
     	 System.out.println("Fields are :: " + f.getName());

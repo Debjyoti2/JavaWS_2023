@@ -12,6 +12,9 @@ import java.util.List;
 4. just like String class 
 
 
+All Wrapper classes(Integer) and String are immutable
+LocalDate, LocalTime, LocalDateTime are immutable
+
 */ 
 
 public final class Student {

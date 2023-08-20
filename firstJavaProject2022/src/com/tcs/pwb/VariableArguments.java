@@ -11,7 +11,7 @@ public class VariableArguments {
 		static String car2="BMW";
 		static String car3="HONDA";
 		
-		public static void printcar(String... cars) {
+		public static void printcar(int a, int b,String... cars) {
 			for(String car:cars) {
 				System.out.println("Cars are : " + car);
 			}
@@ -48,8 +48,8 @@ public class VariableArguments {
 		
 		
         public static void main(String args[]) {
-        	printcar(car1,car2);
-        	printcar(car1,car2,car3);
+        	printcar(1,2,car1,car2);
+        	printcar(1,2,car1,car2,car3);
         	maxLengthDays(daysArray);
         	printDaysBackWards(daysArray);
         }

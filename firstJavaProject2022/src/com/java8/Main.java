@@ -1,8 +1,10 @@
 package com.java8;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -31,6 +33,8 @@ public class Main {
 		Map<String,List<Player>> mymap= team.getPlayers().stream().collect(Collectors.groupingBy(e->e.getType(),Collectors.toList()));
 		
 		System.out.println(mymap);
+		
+		
 	}
 
 }

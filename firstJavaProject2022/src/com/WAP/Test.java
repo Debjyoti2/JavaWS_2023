@@ -1,7 +1,12 @@
 package com.WAP;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Test {
 
@@ -49,6 +54,47 @@ public class Test {
 			}
 		}
 		System.out.println(indexList);
+		
+		
+		
+		//Find duplicates in an array
+		
+		int arr[] = {1,2,3,4,2,3};
+		List<Integer> intList = new ArrayList<>();
+	       for(int i=0;i<arr.length;i++){
+	           intList.add(arr[i]);
+	       }
+	       Map<Integer,Long> intmap = intList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+	    
+	      for(Map.Entry<Integer,Long> mp : intmap.entrySet()){
+	          if(mp.getValue()>1){
+	              System.out.print(" " + mp.getKey());
+	          }
+	      }
+	      
+	      
+	      //2nd soln
+	      Set<Integer> distinctSet = new HashSet<>();
+	      Set<Integer> duplicateSet = new HashSet<>();
+	      for(int i=0;i<arr.length;i++) {
+	    	  if(!distinctSet.contains(arr[i])) {
+	    		  distinctSet.add(arr[i]);
+	    	  }
+	    	  else {
+	    		  duplicateSet.add(arr[i]);
+	    	  }
+	      }
+
+	      List<Integer> list = new ArrayList<>();
+	      list.addAll(duplicateSet);
+	      
+	      System.out.println("");
+	      
+	      Integer arr2[] = {1,2,3,4,2,3};
+	      List<Integer> intList2 = List.of(arr2);
+	      Set<Integer> duplicates = new HashSet<>();
+	      intList2.stream().filter(e->!duplicates.add(e)).collect(Collectors.toList());
+	      System.out.println("Duplicates :: " + duplicates);
 		
 	}
 }

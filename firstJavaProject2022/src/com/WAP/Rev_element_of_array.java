@@ -14,6 +14,14 @@ public class Rev_element_of_array {
 		
 		System.out.println(Arrays.toString(newarray));
 		
+		
+		String str="abc";
+		StringBuilder sb = new StringBuilder();
+		for(int i=0;i<str.length();i++) {
+			sb.append(str.charAt(str.length()-1-i)) ;
+		}
+		
+		System.out.println(sb.toString());
 	}
 
 }

@@ -29,12 +29,12 @@ public class StringQstn {
 		 //same content er jonno string constant pool e ektai object create hoy,str1,str2 both same object kei point kore.
 		 //here both are allocated inside String Constant Pool inside JVM, so both have same memory location.
 		 boolean flag = str1==str2?true:false;
-		 System.out.println("Result is :: " + flag); //true
+		 System.out.println("Result is :: " + flag); //false
 		 
 		 
 		 //2. .equals() method chkek the content inside the string so it return true obviously as both have same content
 		 boolean flag2 = str1.equals(str2)?true:false;
-		 System.out.println("Result2 is :: " + flag2); //true
+		 System.out.println("Result2 is :: " + flag2); //false
 				 
 		 
 		 

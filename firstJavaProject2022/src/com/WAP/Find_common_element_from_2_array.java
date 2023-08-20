@@ -90,8 +90,8 @@ public class Find_common_element_from_2_array {
 		
 		//prime number check
 		int isPrime = 12;
-		//1 diye divide hbe, 11 diye o hbe,, sob number ei tai
-		// chk koro 2 theke 10 obdhi kau diye divide hbe ki na
+		//1 diye divide hbe, 12 diye o hbe,, sob number ei tai
+		// chk koro 2 theke 11 obdhi kau diye divide hbe ki na
 		// 2 - (num-1)
 		boolean flag=false;
 		for(int i1=2;i1<=isPrime-1;i1++) {

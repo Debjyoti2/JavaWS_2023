@@ -6,6 +6,6 @@ public class SOLID {
 //	Open/Closed
 //	Liskov Substitution
 //	Interface Segregation
-//	Dependency Inversion
+//	Dependency Inversion  -- High-level modules/classes should not depend on low-level modules/classes.
 
 }

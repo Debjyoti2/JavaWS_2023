@@ -8,12 +8,12 @@ public class Runner {
 	
 	public static void main(String[] args) {
 		
-//		ThreadClass ex = new ThreadClass();
-//		
-//		Thread th1= new Thread(new RunnableOdd("Thread-1",ex));
-//		Thread th2= new Thread(new RunnableEven("Thread-2",ex));
-//		th1.start();
-//		th2.start();
+		ThreadClass ex = new ThreadClass();
+		
+		Thread th1= new Thread(new RunnableOdd("Thread-1",ex));
+		Thread th2= new Thread(new RunnableEven("Thread-2",ex));
+		th1.start();
+		th2.start();
 		
 		
 		List<Integer> mylist = List.of(0,1,1,1,1,0,0,0,1);

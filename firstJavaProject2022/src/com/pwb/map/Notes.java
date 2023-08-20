@@ -2,6 +2,7 @@ package com.pwb.map;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -30,6 +31,7 @@ public class Notes {
 	//unsorted , unordered
 	// synchronized , thread safe
 	//HashMap allows null value in key but only once , no duplicate. values can be null multiple times.
+	
 	//HashTable don't allow null key and value both.
 	
 	//why ???
@@ -90,7 +92,36 @@ public class Notes {
 			mp.getValue();
 			mp.getKey();
 		}
+		
+		String s1 = new String("abc");
+		String s2 = new String("abc");
+		
+		Map<String,Integer> hashmap1 = new HashMap<>();
+		hashmap1.put(s1, 3);
+		hashmap1.put(s2, 3);
+		
+		//only 1 entry
+		System.out.println(hashmap1);
+		
+		
+		
+		Map<String,Integer> identityhashmap1 = new IdentityHashMap<>();
+		identityhashmap1.put(s1, 3);
+		identityhashmap1.put(s2, 3);
+		
+		//2 entry as there diff memory address
+		System.out.println("identityhashmap1 :: " + identityhashmap1);
+		
+		
+		
+		
+		
+		
+		
+		
 	}
+	
+	
 	
 	
 

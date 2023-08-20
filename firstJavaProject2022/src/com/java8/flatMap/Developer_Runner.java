@@ -25,6 +25,9 @@ public class Developer_Runner {
 		developers.add(d2);
 		
 		
+		String booststr = developers.stream().flatMap(e->e.getBook().stream()).collect(Collectors.joining("---"));
+		System.out.println("booststr :: " + booststr);
+		
 		//get only Developer Names in a List<String>
 		
 		List<String> names2 =developers.stream().map(e->e.getName()).collect(Collectors.toList());

@@ -22,7 +22,7 @@ public class Java_HashSet {
 		
 		HashSet<EmployeePojoForSet> hassetemp = new HashSet<EmployeePojoForSet>();
 		EmployeePojoForSet e1 =new EmployeePojoForSet(101,"Kittu1");
-		EmployeePojoForSet e2 =new EmployeePojoForSet(102,"Kittu1");
+		EmployeePojoForSet e2 =new EmployeePojoForSet(101,"Kittu1");
 		EmployeePojoForSet e3 =new EmployeePojoForSet(103,"Kittu3");
 		hassetemp.add(e1);
 		hassetemp.add(e2);

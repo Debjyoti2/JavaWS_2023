@@ -43,6 +43,7 @@ public class Java8_1 {
 		//number of char in each course
 		courses.stream().map(e->e.length()).forEach(e->System.out.println(e));
 		List<Integer> listsize= courses.stream().map(e->e.length()).collect(Collectors.toList());
+		courses.stream().forEach(String :: length);
 		
 		//sum of numbers by reduce method
 		Integer sum = nums.stream().reduce(0,(e1,e2)->e1+e2);
@@ -144,6 +145,8 @@ public class Java8_1 {
 			System.out.println(mp.getValue());
 		}
 		
+		empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.toList()));
+		
 		
 		Map<Integer,List<Employee_3>> map1 = empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.toList()));
 		
@@ -181,6 +184,8 @@ public class Java8_1 {
 		//max salary
 		Integer maxsal = empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary()).get();
 		System.out.println(maxsal);
+		
+		empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary()).get();
 		
 		//max sal emp from each dept
 		Map<Integer,Employee_3> groupBydeptEmpMaxSal = empList.stream().collect(Collectors.groupingBy(e->e.getDeptId(),Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(e->e.getSalary())), Optional::get)));

@@ -6,6 +6,7 @@ import java.util.List;
 public class WildCard {
 	
 	// <?> --unbound wildcard
+	
 	// <? extends ParentClass> obj   --upper bound wildcard .(upor ta bound ache..upore jete prbe na , niche jbe..tai UPPER bound)  
 	  //means obj can be ParentClass itself or any childclass of  ParentClass
 	
@@ -13,7 +14,7 @@ public class WildCard {
 	// <? super ChildClass> obj --lower bound wildcard . (niche ta bound ache..niche jete prbe na , upore jbe..tai LOWER bound)
 	  //means obj can be childclass itself or any parentclass of  childclass
 	
-	//lower bound wildcards
+	
 	public static void printShape(List<? extends Shape> list){
 		for(Shape s : list) {
 			s.draw(); 

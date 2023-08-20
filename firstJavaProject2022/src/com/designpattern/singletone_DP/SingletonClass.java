@@ -2,16 +2,18 @@ package com.designpattern.singletone_DP;
 
 public class SingletonClass {
 	
-	private static SingletonClass singletonClass;
+	private volatile static SingletonClass singletonClass=null;
 	
 	private SingletonClass(){
 	}
 	
 	public static SingletonClass getInstances() {
 		if(singletonClass==null) {
-			
 			synchronized (SingletonClass.class) {
-				singletonClass =  new SingletonClass();
+				if(singletonClass==null) {
+					singletonClass =  new SingletonClass();
+				}
+				
 			}
 			
 		}

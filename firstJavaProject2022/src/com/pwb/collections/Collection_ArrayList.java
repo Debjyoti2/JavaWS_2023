@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -93,11 +94,12 @@ public class Collection_ArrayList {
 	
 	
 	
-	//3 types of list implementing List Interface
+	//4 types of list implementing List Interface
 	
 	List<String> myArrayList = new ArrayList<String>();
 	List<String> myLinkedList = new LinkedList<String>();
 	List<String> myVector = new Vector<String>();
+	List<String> myStacks = new Stack<String>();
 	
 	//synchronized list
 	List<String> synchronizedArrayList = new CopyOnWriteArrayList<String>();

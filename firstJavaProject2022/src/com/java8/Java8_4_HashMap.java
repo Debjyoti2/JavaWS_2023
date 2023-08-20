@@ -42,6 +42,8 @@ public class Java8_4_HashMap {
 		System.out.println(keystr);
 		
 		
+		cityMap.entrySet().stream().filter(e->e.getValue().equals("Japan")).forEach(e->System.out.println(e.getKey() + e.getValue()));
+		
 		//remove duplicates from list
 		
 		List<Integer> intList =  List.of(1,2,3,4,4,5,5,2,2,3,4,6,7,8,4);
