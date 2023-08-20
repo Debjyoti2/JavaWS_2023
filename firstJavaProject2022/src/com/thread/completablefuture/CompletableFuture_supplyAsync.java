@@ -20,14 +20,15 @@ public class CompletableFuture_supplyAsync {
 		// CompletableFuture<Integer> result =
 		// CompletableFuture.supplyAsync(()->longrunningapicall());
 		CompletableFuture.supplyAsync(() -> longrunningapicall())
-				         .thenAccept((result) -> System.out.println("Result is :: " + result));
+			             .thenApply(e->e*2)
+				         .thenAccept((e) -> System.out.println("Result is :: " + e));
 
 		businessLogic2();
 		businessLogic3();
 
 		// businessLogic4(result.get());
 
-		TimeUnit.SECONDS.sleep(3);
+		businessLogic5();
 
 	}
 
@@ -55,6 +56,15 @@ public class CompletableFuture_supplyAsync {
 
 	public static void businessLogic4(int returnnumfromapicall) {
 		System.out.println("businessLogic4   number return from api call " + returnnumfromapicall);
+	}
+	
+	public static void businessLogic5() {
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("businessLogic5");
 	}
 
 }
