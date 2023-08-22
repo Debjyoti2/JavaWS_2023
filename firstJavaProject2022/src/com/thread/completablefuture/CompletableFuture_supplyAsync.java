@@ -27,7 +27,7 @@ public class CompletableFuture_supplyAsync {
 		businessLogic3();
 
 		// businessLogic4(result.get());
-
+ 
 		businessLogic5();
 
 	}
