@@ -22,7 +22,7 @@ public class CompletableFuture_supplyAsync {
 		CompletableFuture.supplyAsync(() -> longrunningapicall())
 			             .thenApply(e->e*2)
 				         .thenAccept((e) -> System.out.println("Result is :: " + e));
-
+ 
 		businessLogic2();
 		businessLogic3();
 
