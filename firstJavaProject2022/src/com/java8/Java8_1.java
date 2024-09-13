@@ -1,4 +1,4 @@
-package com.java8;
+package src.com.java8;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,6 +66,9 @@ public class Java8_1 {
 		//sqr every num and then find sum
 		Integer sum2 = nums.stream().map(e1->e1*e1).reduce(0,(e1,e2)->e1+e2);
 		System.out.println(sum2);
+
+		Integer sum6 = nums.stream().map(e1->e1*e1).reduce(0,Integer::sum);
+		System.out.println("sum6 :::   " + sum6);
 		
 		//sum of the odd num of a list
 		Integer sum3 = nums.stream().filter(e1->e1%2>0).reduce(0,(e1,e2)->e1+e2);

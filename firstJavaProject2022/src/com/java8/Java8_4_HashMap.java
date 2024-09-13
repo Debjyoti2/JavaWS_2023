@@ -1,5 +1,9 @@
 package com.java8;
 
+import src.com.java8.ExternalDepo;
+import src.com.java8.InvoiceComponent;
+
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,11 +64,37 @@ public class Java8_4_HashMap {
 			}
 		}
 		System.out.println(filterlist);
+
+
+		//check if two maps are same
+		List<InvoiceComponent> componentList = List.of(new InvoiceComponent(1L,new BigDecimal(500)),
+             new InvoiceComponent(2L, new BigDecimal(1000))
+		     );
+
+		List<ExternalDepo> externalDepoList = List.of(new ExternalDepo(100L,1L, new BigDecimal(100)),
+				new ExternalDepo(200L,1L, new BigDecimal(300)),
+				new ExternalDepo(300L,1L, new BigDecimal(200)),
+
+				new ExternalDepo(400L,2L, new BigDecimal(500)),
+				new ExternalDepo(500L,2L, new BigDecimal(500))
+				);
+
+		Map<Long,BigDecimal> componentMap = componentList.stream().collect(Collectors.toMap(InvoiceComponent::getCompId,InvoiceComponent::getAmount));
 		
-		
-		
-		
-		
+		Map<Long,BigDecimal> externalDepoMap = externalDepoList.stream().collect(Collectors.groupingBy(ExternalDepo::getCompId,Collectors.reducing(BigDecimal.ZERO,ExternalDepo::getAmount,BigDecimal::add)));
+
+		System.out.println("componentMap :: " + componentMap);
+		System.out.println("externalDepoMap :: " + externalDepoMap);
+
+		if(componentMap.size()!=externalDepoMap.size()){
+			System.out.println("Maps are not same !!! ");
+		}
+		boolean isSame = componentMap.entrySet().stream().allMatch(e->e.getValue().equals(externalDepoMap.get(e.getKey())));
+		if(isSame){
+			System.out.println("Maps are same !!! ");
+		}else {
+			System.out.println("Maps are not same !!! ");
+		}
 		
 	}
 

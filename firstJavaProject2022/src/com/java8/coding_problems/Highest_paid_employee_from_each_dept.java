@@ -1,4 +1,6 @@
-package com.java8.coding_problems;
+package src.com.java8.coding_problems;
+
+import src.com.java8.Employee_3;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -7,7 +9,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.java8.Employee_3;
 
 public class Highest_paid_employee_from_each_dept {
 
