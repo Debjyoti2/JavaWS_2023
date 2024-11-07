@@ -2,7 +2,20 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/JSTL_Tags" />
+      <excludeFolder url="file://$MODULE_DIR$/Resolving_stateless_app_problem_using_servlet_cookies" />
+      <excludeFolder url="file://$MODULE_DIR$/Servers" />
+      <excludeFolder url="file://$MODULE_DIR$/Servlet_Filter" />
+      <excludeFolder url="file://$MODULE_DIR$/SimpleRegrestrationProject_using_Servlet" />
+      <excludeFolder url="file://$MODULE_DIR$/Stateless_App_Problem_using_Servlet" />
+      <excludeFolder url="file://$MODULE_DIR$/TechBlog" />
+      <excludeFolder url="file://$MODULE_DIR$/firstJdbcProjct" />
+      <excludeFolder url="file://$MODULE_DIR$/first_JSP_Servlet_Project" />
+      <excludeFolder url="file://$MODULE_DIR$/formSubmitUsingServlet" />
+      <excludeFolder url="file://$MODULE_DIR$/practiceServlectProject" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

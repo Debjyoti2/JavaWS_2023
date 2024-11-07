@@ -1,12 +1,8 @@
-package src.com.java8.coding_problems;
+package com.java8.coding_problems;
 
-import src.com.java8.Employee_3;
+import com.java8.Employee_3;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
