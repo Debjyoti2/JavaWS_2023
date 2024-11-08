@@ -40,6 +40,7 @@ public class TestJava8 {
 		
 		//2nd highest
 		empList.stream().sorted(Comparator.comparingInt(Employee_3 :: getSalary)).skip(1).findFirst();
+		empList.stream().sorted(Comparator.comparingInt(Employee_3::getSalary)).skip(1).findFirst();
 		
 		//group by salary
 		Map<Integer,List<Employee_3>> empMap = new HashMap<>();
@@ -135,6 +136,7 @@ public class TestJava8 {
 		System.out.println("sum :: " + sum);
 		
 		intList2.stream().reduce(0,(e1,e2)->(e1+e2));
+		intList2.stream().mapToInt(Integer::intValue).sum();
 		
 		empList.stream().map(e->e.getSalary()).reduce(0,(e1,e2)->(e1+e2));
 		
@@ -170,7 +172,7 @@ public class TestJava8 {
 		
 		//11. Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 		
-		Integer[]nums = {1,2,3,4};
+		Integer[]nums = {1,2,3,4,1};
 		Long count = Stream.of(nums).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
 				.entrySet().stream().filter(e->e.getValue()>1).count();
 		if(count>0) {
@@ -178,7 +180,10 @@ public class TestJava8 {
 		}else {
 			System.out.println("All distinct ");
 		}
-		
+
+		boolean flag= Stream.of(nums).collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet()
+				.stream().anyMatch(e->e.getValue()>1);
+		System.out.println("flag is :: " + flag);
 		
 		//remove white space from string by java 8
 		String str1 = "My Name is Debjyoti";
@@ -188,8 +193,9 @@ public class TestJava8 {
 		StringBuilder sb = new StringBuilder();
 		strList1.stream().filter(e->!" ".equals(e)).forEach(e-> sb.append(e));
 		System.out.println("String is ::   " + sb.toString());
-		
-		
+
+		String str = Stream.of(str1.split("")).filter(e->!" ".equalsIgnoreCase(e)).collect(Collectors.joining(""));
+		System.out.println("str is :: " + str);
 		
 		List<String> strList4 =  List.of("Apple","Banana","Mango");
 		Map<Object,Object> mppp = strList4.stream().collect(Collectors.toMap(e->String.valueOf(e), e->strList4.indexOf(e)));
@@ -219,7 +225,20 @@ public class TestJava8 {
 		Integer[] intarray4 = {1,2,3,4,1,2};
 		Set<Integer> duplicates = new HashSet<>();
 		Stream.of(intarray4).filter(e->!duplicates.add(e)).collect(Collectors.toList()).forEach(e-> System.out.println(e));
-		
+
+		String str8 = "My Name is Debjyoti";
+		String s= Stream.of(str8.split(""))
+				.filter(e->!" ".equalsIgnoreCase(e))
+				.map(e->e.toLowerCase())
+				.collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
+				.entrySet()
+				.stream()
+				.filter(e->e.getValue()>1)
+				.map(e->e.getKey())
+				.findFirst()
+				.get();
+
+
 	}
 
 }

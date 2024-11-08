@@ -53,6 +53,7 @@ public class Java8_1 {
 		
 		nums.stream().reduce(0,(e1,e2)->(e1+e2));
 		nums.stream().reduce(0,(e1,e2)->e1+e2);
+		nums.stream().max((e1,e2)->Integer.compare(e1,e2)).get();
 		
 		//max number
 		Integer maxmum=nums.stream().max((e1,e2)->Integer.compare(e1,e2)).get();
@@ -61,6 +62,7 @@ public class Java8_1 {
 		
 		nums.stream().max((e1,e2)->Integer.compare(e1, e2)).get();
 		nums.stream().max((e1,e2)->Integer.compare(e1, e2)).get();
+
 		
 		
 		//sqr every num and then find sum
@@ -95,11 +97,12 @@ public class Java8_1 {
 		boolean flag3 = courseList.stream().anyMatch(e->e.getReviewScore()>3);
 		
 		courseList.stream().sorted(new NoOfStudentsComparator()).collect(Collectors.toList());
-		
-		
+
+
 		//max noOfStudents course
 		Course Obj = courseList.stream().max((e1,e2)->Integer.compare(e1.getNoOfStudents(),e2.getNoOfStudents())).get();
-		
+		courseList.stream().max((e1,e2)->Integer.compare( e1.getNoOfStudents(),e2.getNoOfStudents())).get();
+
 		Course obj= courseList.stream().max((e1,e2)->Integer.compare(e1.getNoOfStudents(),e2.getNoOfStudents())).get();
 		
 		courseList.stream().max((e1,e2)->Integer.compare(e1.getNoOfStudents(),e2.getNoOfStudents())).get();
@@ -147,6 +150,7 @@ public class Java8_1 {
 			System.out.println(mp.getKey());
 			System.out.println(mp.getValue());
 		}
+		empList.stream().collect(Collectors.groupingBy(e->e.getSalary(), Collectors.toList()));
 		
 		empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.toList()));
 		
@@ -193,7 +197,8 @@ public class Java8_1 {
 		//max sal emp from each dept
 		Map<Integer,Employee_3> groupBydeptEmpMaxSal = empList.stream().collect(Collectors.groupingBy(e->e.getDeptId(),Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(e->e.getSalary())), Optional::get)));
 		System.out.println("groupBydeptEmpMaxSal  " + groupBydeptEmpMaxSal);
-		
+
+		empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(e->e.getSalary())),Optional::get)));
 		
 		System.out.println("-----------------------------------"); 
 		
