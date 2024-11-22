@@ -33,7 +33,39 @@ public class Test2 {
 	    	all[a.length+i] = b[i];
 	    }
 	    System.out.println(Arrays.toString(all));
-		
+
+
+		//left rotation of array
+		int[] arr1 = {1,2,3,4,5};
+		int k=2;
+
+		for(int i=0;i<k;i++){
+			int n = arr1[0];
+			for(int j=0;j<arr1.length-1;j++){
+			  arr1[j]=arr1[j+1];
+			}
+			arr1[arr1.length-1]=n;
+		}
+		System.out.println("arr1 :: " + Arrays.toString(arr1));
+
+
+		//right rotation
+		int[] arr2 ={1,2,3,4,5};
+		int p=2;
+		for(int a1=0;a1<p;a1++){
+
+			int lastelement = arr2[arr2.length-1];
+
+			for(int a2=0;a2<arr2.length-1;a2++){
+				arr2[arr2.length-1-a2]=arr2[arr2.length-1-a2-1];
+			}
+			arr2[0]=lastelement;
+		}
+		System.out.println("arr2 :: " + Arrays.toString(arr2));
+
+
+
+
 	    
 	}
 

@@ -5,8 +5,9 @@ import java.util.TreeSet;
 public class TreeSet_Sorting {
 	
 	public static void main(String[] args) {
+
 		Employee e1 = new Employee(1, "Arun");
-		Employee e2 = new Employee(2, "Kunal");
+		Employee e2 = new Employee(2, "Zunal");
 		Employee e3 = new Employee(3, "Rahul");
 		Employee e4 = new Employee(4, "Pritam");
 		

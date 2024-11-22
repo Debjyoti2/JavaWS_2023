@@ -1,16 +1,10 @@
 package com.java8;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class TestJava8 {
@@ -237,6 +231,125 @@ public class TestJava8 {
 				.map(e->e.getKey())
 				.findFirst()
 				.get();
+
+		//convert into map and check if two maps are same
+
+		List<InvoiceComponent> componentList = List.of(
+				new InvoiceComponent(1L,new BigDecimal(500)),
+				new InvoiceComponent(2L, new BigDecimal(1000))
+		);
+
+		List<ExternalDepo> externalDepoList = List.of(
+				new ExternalDepo(100L,1L, new BigDecimal(100)),
+				new ExternalDepo(200L,1L, new BigDecimal(300)),
+				new ExternalDepo(300L,1L, new BigDecimal(200)),
+
+				new ExternalDepo(400L,2L, new BigDecimal(500)),
+				new ExternalDepo(500L,2L, new BigDecimal(500))
+		);
+
+
+		Map<Long,BigDecimal> compMap = componentList.stream().collect(Collectors.toMap(e->e.getCompId(),e->e.getAmount()));
+
+		System.out.println("compMap :: " + compMap);
+
+		Map<Long,BigDecimal> extMap = externalDepoList.stream().collect(Collectors.groupingBy(e->e.getCompId(),Collectors.reducing(BigDecimal.ZERO,e3->e3.getAmount(),BigDecimal::add)));
+
+		System.out.println("extMap :: " + extMap);
+
+		boolean isMapSame = compMap.entrySet().stream().allMatch(e->e.getValue().equals(extMap.get(e.getKey())));
+
+		System.out.println("isMapSame :: " + isMapSame);
+
+		//1) Given a list of integers, separate odd and even numbers?
+
+		List<Integer> listOfIntegers = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
+		Map<Boolean,List<Integer>> partitionMap = listOfIntegers.stream().collect(Collectors.partitioningBy(e->e%2==0));
+		System.out.println("partitionMap :: " + partitionMap);
+		List<Integer> evenNums= partitionMap.entrySet().stream().filter(e->e.getKey()).map(e->e.getValue()).findFirst().get();
+		System.out.println("evenNums :: " + evenNums);
+
+       //9) How do you merge two unsorted arrays into single sorted array using Java 8 streams?
+
+		Integer[] a =  {4, 2, 7, 1};
+		Integer[] b =  {8, 3, 9, 5};
+		List<Integer> sortedSingleArray = Stream.concat(Stream.of(a),Stream.of(b)).sorted().collect(Collectors.toList());
+		System.out.println("sortedSingleArray :: " + sortedSingleArray);
+
+		//11) How do you get three maximum numbers and three minimum numbers from the given list of integers?
+
+		List<Integer> listOfIntegers1 = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
+		List<Integer> min3Nums = listOfIntegers1.stream().sorted(Collections.reverseOrder()).skip(listOfIntegers1.size()-3).collect(Collectors.toList());
+		System.out.println("min3Nums :: " + min3Nums);
+
+		List<Integer>max3Nums = listOfIntegers1.stream().sorted(Collections.reverseOrder()).limit(3).collect(Collectors.toList());
+		System.out.println("max3Nums :: " + max3Nums);
+
+		//12) Java 8 program to check if two strings are anagrams(contains exact same alphabet) or not?
+
+		String s1 = "RaceCar";
+		String s2 = "CarRace";
+
+		String s11=Stream.of(s1.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
+		String s22=Stream.of(s2.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
+		if(s11.equalsIgnoreCase(s22)){
+			System.out.println("Both String are exact same");
+		}
+		else{
+			System.out.println("Both String are not same");
+		}
+
+		//18) Reverse each word of a string using Java 8 streams?
+
+		String str3 = "Java Concept Of The Day";
+		String str4 = Stream.of(str3.split(" ")).map(e->new StringBuilder(e).reverse()).collect(Collectors.joining(" "));
+		System.out.println("str4 :: " + str4);
+
+		//22) How do you find the most repeated element in an array?
+
+		List<String> listOfStrings = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Pen", "Note Book", "Pencil");
+		String most= listOfStrings.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+				 .entrySet()
+				 .stream().sorted(Comparator.comparing(e->e.getValue()))
+				 .skip(listOfStrings.stream().distinct().toList().size()-1)
+				 .map(e->e.getKey()).findFirst().get();
+		System.out.println("most :: " + most);
+
+		//23) Palindrome program using Java 8 streams
+
+		String str9 = "ROTATOR";
+		char[] str9char = str9.toCharArray();
+		int count1=0;
+		for(int i=0;i<str9char.length;i++){
+			if(str9char[i]!=str9.charAt(str9.length()-1-i)){
+				count1++;
+				System.out.println("Not a Palindrome !!");
+				return;
+			}
+		}
+		if(count1==0){
+			System.out.println("Is a Palindrome !!");
+		}
+
+		//java 8
+		boolean iscount= IntStream.range(0,str9.length()/2)
+				.anyMatch(e->str9.charAt(e)!=str9.charAt(str9.length()-1-e));
+		if(iscount){
+			System.out.println(">> Is not a Palindrome !!");
+		}else {
+			System.out.println(">> Is  a Palindrome !!");
+		}
+
+		//19. How to find only duplicate elements with its count from the String ArrayList in Java8?
+		List<String> names = Arrays.asList("AA", "BB", "AA", "CC");
+		Map<String,Long> mp= names.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+				.entrySet().stream()
+				.filter(e->e.getValue()>1)
+				.collect(Collectors.toMap(e->e.getKey(),e->e.getValue()));
+		System.out.println("mp :  " +  mp);
+
+
+
 
 
 	}

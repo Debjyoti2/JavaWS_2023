@@ -67,11 +67,13 @@ public class Java8_4_HashMap {
 
 
 		//check if two maps are same
-		List<InvoiceComponent> componentList = List.of(new InvoiceComponent(1L,new BigDecimal(500)),
-             new InvoiceComponent(2L, new BigDecimal(1000))
+		List<InvoiceComponent> componentList = List.of(
+				new InvoiceComponent(1L,new BigDecimal(500)),
+                new InvoiceComponent(2L, new BigDecimal(1000))
 		     );
 
-		List<ExternalDepo> externalDepoList = List.of(new ExternalDepo(100L,1L, new BigDecimal(100)),
+		List<ExternalDepo> externalDepoList = List.of(
+				new ExternalDepo(100L,1L, new BigDecimal(100)),
 				new ExternalDepo(200L,1L, new BigDecimal(300)),
 				new ExternalDepo(300L,1L, new BigDecimal(200)),
 

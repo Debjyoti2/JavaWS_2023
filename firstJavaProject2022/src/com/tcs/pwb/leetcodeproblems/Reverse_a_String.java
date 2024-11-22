@@ -47,6 +47,23 @@ public class Reverse_a_String {
 		int fetchCount = Obj.totalPairs(passArray2, 2);
 		System.out.println("fetchCount is :: " +fetchCount);
 
+
+		//reverse a string..
+        // 5 - i - 1
+		String str = "abcde";
+		StringBuilder sb = new StringBuilder();
+		for(int i=0;i<str.length();i++){
+			char c= str.charAt(str.length()-i-1);
+			sb.append(c);
+		}
+		System.out.println("reverse string  " + sb.toString());
+
+
+
+
+
+
+
 	}
 
 	public String average(int A[], int N)
