@@ -1,8 +1,11 @@
 package com.WAP;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Find_common_element_from_2_array {
 	
@@ -21,7 +24,7 @@ public class Find_common_element_from_2_array {
 				}
 			}
 		}
-		
+		Arrays.stream(array1).filter(e->Arrays.stream(array2).anyMatch(e1->e1==e)).forEach(System.out::println);
 		
 		
 		//input : Hello-Learners-Happy-Learning
@@ -56,7 +59,7 @@ public class Find_common_element_from_2_array {
 		System.out.println("");
 		
 		//String Palindrome
-		String str1 = "bob";
+		String str1 = "boba";
 		StringBuilder sb = new StringBuilder();
 		for(int i=1;i<=str1.length();i++) {
 			sb.append(str1.charAt(str1.length()-i));
@@ -67,7 +70,14 @@ public class Find_common_element_from_2_array {
 		}else {
 			System.out.println("No  Palindrome :: " + str1);
 		}
-		
+
+		boolean anyUnmatchedChar = IntStream.range(0,str1.length()/2).anyMatch(e->str1.charAt(e)!=str1.charAt(str1.length()-1-e));
+		if(anyUnmatchedChar) {
+			System.out.println("No Palindrome :: " + str1);
+		}else {
+			System.out.println("Yes  Palindrome :: " + str1);
+		}
+
 		//Armstrong number
 		Integer number = 1634; //joto gulo number toto power hbe.. 3 te number tai cube hbe
 		int sum=0;

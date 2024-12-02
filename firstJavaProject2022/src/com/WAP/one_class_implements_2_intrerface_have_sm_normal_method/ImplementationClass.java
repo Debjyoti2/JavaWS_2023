@@ -6,13 +6,13 @@ public class ImplementationClass implements Interface_1,Interface_2 {
 
 	@Override
 	public void method_1() {
-		// TODO Auto-generated method stub
+		System.out.println("M1");
 		
 	}
 
 	@Override
 	public void method_2() {
-		// TODO Auto-generated method stub
+		System.out.println("M2");
 		
 	}
 

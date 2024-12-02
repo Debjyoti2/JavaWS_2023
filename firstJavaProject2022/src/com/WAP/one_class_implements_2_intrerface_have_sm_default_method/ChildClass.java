@@ -7,10 +7,9 @@ public class ChildClass implements Interface_11,Interface_22 {
 		c.method_1();
 	}
 
+
 	@Override
 	public void method_1() {
 		Interface_11.super.method_1();
 	}
-
-
 }

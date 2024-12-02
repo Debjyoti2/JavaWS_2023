@@ -4,7 +4,9 @@ public class Runner {
 
 	public static void main(String[] args) {
 
-		
+		ImplementationClass i = new ImplementationClass();
+		i.method_1();
+		i.method_2();
 		
 		
 
