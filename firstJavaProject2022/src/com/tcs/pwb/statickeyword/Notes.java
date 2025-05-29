@@ -2,7 +2,7 @@ package com.tcs.pwb.statickeyword;
 
 public class Notes {
 	
-	//static menas variable , method belongs to class
+	//static means variable , method belongs to class
 	
 	//to call those variables , methods we dont need to create an object 
 	//we just need to use ClassName.variableName/  ClassName.methodName

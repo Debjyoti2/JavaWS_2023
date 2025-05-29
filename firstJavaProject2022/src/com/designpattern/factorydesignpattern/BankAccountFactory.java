@@ -2,22 +2,18 @@ package com.designpattern.factorydesignpattern;
 
 public class BankAccountFactory {
 	
-	public static BankAccount getInstances(String accoutType) {
-		
-		BankAccount bankAccount=null;
-		
-		if(accoutType.equals("BUSINESS")) {
-			bankAccount =  new BusinessAccount();
+	public static BankAccount getInstances(String accountType) {
+		switch(accountType){
+			case "BUSINESS" :
+				return new BusinessAccount();
+			case "PERSONAL" :
+				return new PersonalAccount();
+			case "CHECKING" :
+				return new CheckingAccount();
+			default:
+				return null;
 		}
-		else if(accoutType.equals("PERSONAL")) {
-			bankAccount=  new PersonalAccount();
-		}
-		else if(accoutType.equals("CHECKING")) {
-			bankAccount =  new CheckingAccount();
-		}
-		
-		return bankAccount;
-		
+
 	}
 	
 

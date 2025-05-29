@@ -31,7 +31,7 @@ public class Student implements Serializable{
 
 /*
 
-implements Serializable nz likhele below error debe
+implements Serializable na likhele below error debe
 
 java.io.NotSerializableException: com.tcs.pwb.serialization_deserialization.Student
         at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1187)

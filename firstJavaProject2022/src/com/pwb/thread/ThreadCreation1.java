@@ -7,7 +7,9 @@ public class ThreadCreation1 extends Thread{
 	
 	@Override
 	public void run() {
-		
+
+		ThreadLocal<String> local = new ThreadLocal<>();
+
 		int i=20;
 		while(i>0) {
 			try {

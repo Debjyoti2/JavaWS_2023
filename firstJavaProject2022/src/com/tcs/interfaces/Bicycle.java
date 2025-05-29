@@ -1,7 +1,10 @@
 package com.tcs.interfaces;
 
 public interface Bicycle {
-	
+
+	// by default variables in interface are public static final
+	int number=10;
+
 	//we can also declare a properties variable
 	final int a =45;
 	

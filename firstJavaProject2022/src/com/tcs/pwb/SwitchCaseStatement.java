@@ -54,9 +54,34 @@ public class SwitchCaseStatement {
 		boolean iseven;
 		iseven =k%2==0?true:false;
 		System.out.println("Result Is : " +iseven);
+
+		System.out.println(monthName(3));
 		
 
 	}
-	
+
+
+	public static String monthName(int monthNum){
+		String monthName;
+
+		switch(monthNum){
+			case 1 : {
+				monthName ="Jan";
+				break;
+			}
+			case 2 :
+			case 3: {
+				monthName="Feb";
+				break;
+			}
+			default: {
+				monthName="NA";
+				break;
+			}
+
+		}
+		return monthName;
+
+	}
 	
 }

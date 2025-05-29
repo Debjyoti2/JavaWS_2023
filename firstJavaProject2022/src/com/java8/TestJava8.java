@@ -28,6 +28,8 @@ public class TestJava8 {
 		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
 		
 		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
+
+		empList.stream().sorted(Comparator.comparingInt(Employee_3::getSalary)).collect(Collectors.toList());
 		
 		
 		empList.stream().sorted(Comparator.comparing(Employee_3 :: getSalary)).collect(Collectors.toList());
@@ -35,10 +37,13 @@ public class TestJava8 {
 		//2nd highest
 		empList.stream().sorted(Comparator.comparingInt(Employee_3 :: getSalary)).skip(1).findFirst();
 		empList.stream().sorted(Comparator.comparingInt(Employee_3::getSalary)).skip(1).findFirst();
+		empList.stream().sorted(Comparator.comparingInt(Employee_3::getSalary).reversed()).skip(1).findFirst();
+
 		
 		//group by salary
 		Map<Integer,List<Employee_3>> empMap = new HashMap<>();
 		empMap=empList.stream().collect(Collectors.groupingBy(Employee_3 :: getSalary,Collectors.toList()));
+		empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.toList()));
 		
 		Map<Integer,Long> mpp = empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.counting()));
 		
@@ -48,7 +53,12 @@ public class TestJava8 {
 		Map<Integer,Long> map_groupby_deptid = new HashMap<>(); 
 		map_groupby_deptid=empList.stream().collect(Collectors.groupingBy(Employee_3::getDeptId,Collectors.counting()));
 		map_groupby_deptid.entrySet().forEach(e->System.out.println("dept is :: " + e.getKey() + "  count is : " + e.getValue()));
-		
+		empList.stream().collect(Collectors.groupingBy(e->e.getSalary(),Collectors.counting()))
+				.entrySet()
+				.stream()
+				.forEach(e-> System.out.println(e.getKey() + e.getValue()));
+
+
 		//group by dept
 		Map<Integer,List<Employee_3>> newMap = empList.stream().collect(Collectors.groupingBy(Employee_3::getDeptId,Collectors.toList()));
         newMap.entrySet().forEach(e-> System.out.println("Dept is :: " + e.getKey() + " Obj : " + e.getValue()));
@@ -64,6 +74,7 @@ public class TestJava8 {
 		//max salary emp
 		Employee_3 maxSalObj = empList.stream().max((e1,e2)-> Integer.compare(e1.getSalary(),e2.getSalary())).get();
 		System.out.println("maxSalObj is :: " + maxSalObj);
+		empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary()));
 		
 		Integer maxsal  = empList.stream().max((e1,e2)->Integer.compare(e1.getSalary(),e2.getSalary())).map(e->e.getSalary()).get();
 		
@@ -77,7 +88,10 @@ public class TestJava8 {
 		
 		//max sal emp from each dept
 		Map<Integer,List<Employee_3>> grpbydept = empList.stream().collect(Collectors.groupingBy(Employee_3 :: getDeptId,Collectors.toList()));
-		
+
+		//group by with filter combo  *********
+		empList.stream()
+				.collect(Collectors.groupingBy(e2->e2.getDeptId(),Collectors.filtering(e->e.getSalary()>2000,Collectors.toList())));
 		
 		//max value from list
 		List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);

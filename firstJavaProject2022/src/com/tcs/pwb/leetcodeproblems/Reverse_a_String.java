@@ -1,6 +1,8 @@
 package com.tcs.pwb.leetcodeproblems;
 
 import java.math.BigDecimal;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Reverse_a_String {
 
@@ -58,8 +60,9 @@ public class Reverse_a_String {
 		}
 		System.out.println("reverse string  " + sb.toString());
 
-
-
+		StringBuilder sb1 = new StringBuilder();
+		IntStream.range(0,str.length()).forEach(e->sb1.append(str.charAt(str.length()-1-e)));
+		System.out.println("reverse string  " + sb1.toString());
 
 
 
