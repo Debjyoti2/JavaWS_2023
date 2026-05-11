@@ -1,6 +1,7 @@
 package com.WAP.arrayrotation;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class RightRotation {
 	
@@ -18,6 +19,9 @@ public class RightRotation {
 		}
 		
 		System.out.println(Arrays.toString(intarray));
+
+		List<String> stringList = List.of("1","2");
+		stringList.stream().forEach(e->e.toString());
 		
 	}
 
