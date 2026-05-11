@@ -22,6 +22,8 @@ public class RightRotation {
 
 		List<String> stringList = List.of("1","2");
 		stringList.stream().forEach(e->e.toString());
+
+
 		
 	}
 
