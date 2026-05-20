@@ -10,6 +10,10 @@ public class BankAccountFactoryController {
 		bankAccount.registerAccount();
 		bankAccount.calculateInterestrate();
 		bankAccount.validateUserIdentity();
+
+		//same factory deciding logic i can put in a drools excel file and from there i
+		// can return the Impl class to call..
+		// Its a alternative approach used in industry..
 		
 	}
 	
